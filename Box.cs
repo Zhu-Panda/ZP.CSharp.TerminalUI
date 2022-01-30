@@ -24,9 +24,9 @@ namespace ZP.CSharp.TerminalUI
         {
             Draw(this.Height, this.Width, this.Left, this.Top, this.Title, spacing);
         }
-        public void Draw(int height, int width, int left, int top, string title, int spacing = 2)
+        public void Draw(int height, int width, int left, int top, string title, int titleSpacing = 2)
         {
-            if (spacing > (width - 2 - title.Length))
+            if (titleSpacing > (width - 2 - title.Length))
             {
                 throw new InvalidOperationException("Spacing and/or title length exceeds width.");
             }
@@ -34,9 +34,9 @@ namespace ZP.CSharp.TerminalUI
             Console.Write(Border.TopLeft.MapToChar());            
             for (int i = 0; i < (width - 2); i++)
             {
-                if (i >= spacing && (i - spacing) < title.Length)
+                if (i >= titleSpacing && (i - titleSpacing) < title.Length)
                 {
-                    Console.Write(title[i - spacing]);
+                    Console.Write(title[i - titleSpacing]);
                 }
                 else
                 {
