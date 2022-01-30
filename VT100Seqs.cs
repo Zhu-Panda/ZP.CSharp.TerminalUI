@@ -19,6 +19,22 @@ namespace ZP.CSharp.TerminalUI
         public static readonly string NoInvert = "\x1b[27m";
         public static readonly string Show = "\x1b[28m";
         public static readonly string NoStrikethrough = "\x1b[29m";
+        public static string VT100SeqFromRGB(int r, int g, int b, bool bg = false)
+        {
+            if (r < 0 || r > 255)
+            {
+                throw new ArgumentOutOfRangeException("r", r, "Red is too much or too little.");
+            }
+            if (g < 0 || g > 255)
+            {
+                throw new ArgumentOutOfRangeException("g", g, "Green is too much or too little.");
+            }
+            if (b < 0 || b > 255)
+            {
+                throw new ArgumentOutOfRangeException("b", b, "Blue is too much or too little.");
+            }
+            return $"\x1b[{(bg ? 48 : 38)};2;{r};{g};{b}m";
+        }
     }
 }
 
