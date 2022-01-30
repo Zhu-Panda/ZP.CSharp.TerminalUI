@@ -1,7 +1,7 @@
 using System;
 namespace ZP.CSharp.TerminalUI
 {
-    class VT100Seqs
+    class ConsoleOutputRendering
     {
         public static readonly string Reset = "\x1b[0m";
         public static readonly string Bold = "\x1b[1m";
@@ -19,7 +19,7 @@ namespace ZP.CSharp.TerminalUI
         public static readonly string NoInvert = "\x1b[27m";
         public static readonly string Show = "\x1b[28m";
         public static readonly string NoStrikethrough = "\x1b[29m";
-        public static string VT100SeqFromRGB(int r, int g, int b, bool bg = false)
+        public static string ColorFromRGB(int r, int g, int b, bool bg = false)
         {
             if (r < 0 || r > 255)
             {
