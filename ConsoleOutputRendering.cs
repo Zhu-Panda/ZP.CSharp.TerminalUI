@@ -27,6 +27,16 @@ namespace ZP.CSharp.TerminalUI
         public static readonly string FGMagenta = "\x1b[35m";
         public static readonly string FGCyan = "\x1b[36m";
         public static readonly string FGWhite = "\x1b[37m";
+        public static readonly string FGDefault = "\x1b[39m";
+        public static readonly string BGBlack = "\x1b[40m";
+        public static readonly string BGRed = "\x1b[41m";
+        public static readonly string BGGreen = "\x1b[42m";
+        public static readonly string BGYellow = "\x1b[43m";
+        public static readonly string BGBlue = "\x1b[44m";
+        public static readonly string BGMagenta = "\x1b[45m";
+        public static readonly string BGCyan = "\x1b[46m";
+        public static readonly string BGWhite = "\x1b[47m";
+        public static readonly string BGDefault = "\x1b[49m";
         public static string ColorFromRGB(int r, int g, int b, bool bg = false)
         {
             if (r < 0 || r > 255)
