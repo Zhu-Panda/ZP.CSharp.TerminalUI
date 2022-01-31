@@ -1,9 +1,10 @@
 using System;
+using ZP.CSharp.TerminalUI;
 namespace ZP.CSharp.TerminalUI
 {
     class ConsoleOutput
     {
-        public static readonly string Reset = "\x1b[0m";
+        public static readonly string Default = "\x1b[0m";
         public static readonly string Bold = "\x1b[1m";
         public static readonly string Dim = "\x1b[2m";
         public static readonly string Italic = "\x1b[3m";
@@ -59,7 +60,6 @@ namespace ZP.CSharp.TerminalUI
             {
                 throw new ArgumentOutOfRangeException("id", id, "Color ID is too much or too little.");
             }
-
             return $"\x1b[{(bg ? 48 : 38)};5;{id}m";
         }
         public static string ColorFromRGB(int r, int g, int b, bool bg = false)
