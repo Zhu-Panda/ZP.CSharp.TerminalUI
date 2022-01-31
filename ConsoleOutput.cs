@@ -1,7 +1,7 @@
 using System;
 namespace ZP.CSharp.TerminalUI
 {
-    class ConsoleOutputRendering
+    class ConsoleOutput
     {
         public static readonly string Reset = "\x1b[0m";
         public static readonly string Bold = "\x1b[1m";
