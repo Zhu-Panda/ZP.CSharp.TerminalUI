@@ -53,6 +53,15 @@ namespace ZP.CSharp.TerminalUI
         public static readonly string BGBrightMagenta = "\x1b[105m";
         public static readonly string BGBrightCyan = "\x1b[106m";
         public static readonly string BGBrightWhite = "\x1b[107m";
+        public static string ColorFrom256Table(int id, bool bg = false)
+        {
+            if (id < 0 || id > 255)
+            {
+                throw new ArgumentOutOfRangeException("id", id, "Color ID is too much or too little.");
+            }
+
+            return $"\x1b[{(bg ? 48 : 38)};5;{id}m";
+        }
         public static string ColorFromRGB(int r, int g, int b, bool bg = false)
         {
             if (r < 0 || r > 255)
@@ -73,6 +82,7 @@ namespace ZP.CSharp.TerminalUI
         {
             return $"\x1b]8;id={id};{url}\x1b\\{desc}\x1b]8;;\x1b\\";
         }
+        
     }
 }
 
