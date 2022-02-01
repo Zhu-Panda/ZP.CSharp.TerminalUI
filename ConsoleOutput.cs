@@ -2,7 +2,7 @@ using System;
 using ZP.CSharp.TerminalUI;
 namespace ZP.CSharp.TerminalUI
 {
-    class ConsoleOutput
+    public static class ConsoleOutput
     {
         public const string Default = "\x1b[0m";
         public const string Bold = "\x1b[1m";
