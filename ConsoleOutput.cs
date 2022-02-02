@@ -81,8 +81,7 @@ namespace ZP.CSharp.TerminalUI
         public static string Hyperlink(string url, string desc, string id = "")
         {
             return $"\x1b]8;id={id};{url}\x1b\\{desc}\x1b]8;;\x1b\\";
-        }
-        
+        }        
     }
 }
 
